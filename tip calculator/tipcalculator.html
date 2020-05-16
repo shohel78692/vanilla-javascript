@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>shohel's claculator</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
+		*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Playfair Display', serif;
+		}
+
+		main{
+			height: 100vh;
+			background-image: linear-gradient(to right top, #051937,#004d7a,#008793,#00bf72, #a8eb12);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		div{
+			max-width: 500px; height: auto;
+			background-color: #00cec9;
+			padding: 50px;
+			box-shadow: 1px 1px 15px 3px #2d3436;
+		}
+
+		h1{
+			margin-bottom: 10px;
+			text-shadow: 1px 2px 1px white;
+		}
+
+        label{
+        	display: block;
+        	margin-top: 30px;
+        }
+
+        input{
+        	width: 400px;
+        	padding: 10px 0;
+        }
+
+        button{
+        	border-radius: 10px;
+        	padding: 15px 30px;
+        	font-size: 0.8rem;
+        	text-transform: uppercase;
+        	border: none;
+        	color: white;
+        	background: #00b894;
+        	box-shadow: 1px 1px 5px 1px #2d3436;
+        	margin-top: 20px;
+        }
+
+	</style>
+</head>
+<body>
+
+<main>
+	<h1>Tip Calculator</h1>
+	<div>
+
+		<label>Bill amount</label>
+		<input type="text" id="bill_amount">
+		<br>
+		<label>Tip percentage</label>
+		<input type="text" id="tip_perc">
+		<br>
+		<label>Tip amount</label>
+		<input type="text" id="tip_total"disabled>
+		<br>
+		<label>Total bill</label>
+		<input type="text" id="total_bill" disabled>
+		<br>
+
+		<button onclick="tipcalcy()">Calculate</button>
+	</div>
+</main>
+
+
+<script>
+	
+  const tipcalcy = () => {
+  	let amount = document.getElementById('bill_amount').value;
+  	 let perc = document.getElementById('tip_perc').value;
+
+  	 let tip = amount * (perc / 100);
+      
+
+     let total = tip + Number(amount);
+      
+     document.getElementById('tip_total').value = tip;
+     document.getElementById('total_bill').value = total;
+  }
+
+</script>
+
+</body>
+</html>

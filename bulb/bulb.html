@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>shohels bulb</title>
+	<style>
+		.bulb img{
+			width: 300px;
+			height: 350px;
+		}
+	</style>
+</head>
+<body>
+
+
+<script>
+  function light(value)
+  {
+  	var pic;
+  	if(value == 0)	
+  	{
+        pic="b3.jpg"; 
+  	}
+  	else
+  	{
+  		pic="b2.jpg";
+  	}
+  	document.getElementById('bulb').src=pic;
+  }
+</script>
+<div class="container">
+<div class="bulb">
+<img id="bulb" src="b3.jpg">
+</div>
+ <div class="button">
+<button onclick="light(1)"> Turn On</button>
+<button onclick="light(0)"> Turn Off</button>
+</div>
+</div>
+</body>
+</html>
